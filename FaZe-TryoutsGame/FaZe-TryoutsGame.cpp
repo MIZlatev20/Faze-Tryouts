@@ -180,6 +180,55 @@ void mainMenu()
 	}
 }
 
+void helpMenu()
+{
+	helpLogo();
+
+	int counter = 1;
+	char key;
+
+	for (int i = 0;;)
+	{
+		if (counter == 1) { displayColor[0] = RED; }
+
+		colorSelection(GREEN);
+		gotoxy(25, 9);
+		cout << "Rules:" << endl;
+		gotoxy(25, 10);
+		cout << "Rules here" << endl;
+		gotoxy(25, 11);
+		cout << "rules here" << endl;
+		gotoxy(25, 12);
+		cout << "rules here " << endl;
+		gotoxy(25, 13);
+		cout << "rules here!";
+		gotoxy(25, 14);
+		cout << "Escape button: Exit";
+
+		gotoxy(xStartPosition, 15);
+		colorSelection(displayColor[0]);
+		cout << "Go Back";
+
+		key = _getch();
+
+		//carriage return - enter (keyboard)
+		if (key == '\r')
+		{
+			displayColor[0] = WHITE;
+
+			system("CLS");
+
+			if (counter == 1)
+			{
+				mainMenu();
+				break;
+			}
+		}
+		displayColor[0] = WHITE;
+	}
+}
+
+
 int main()
 {
 	mainMenu();
