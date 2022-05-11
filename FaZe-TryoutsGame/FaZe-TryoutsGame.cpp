@@ -108,6 +108,76 @@ void rulesLogo()
 )" << '\n';
 }
 
+void mainMenu();
+
+void mainMenu()
+{
+	Logo();
+
+	int counter = 1;
+	char key;
+
+	for (;;)
+	{
+		if (counter >= 1 && counter <= 4)
+			displayColor[counter - 1] = RED;
+
+		gotoxy(xStartPosition, 9);
+		colorSelection(displayColor[0]);
+		cout << "1. Start";
+
+		gotoxy(xStartPosition, 10);
+		colorSelection(displayColor[1]);
+		cout << "2. Help";
+
+		gotoxy(xStartPosition, 11);
+		colorSelection(displayColor[2]);
+		cout << "3. Rules";
+
+		gotoxy(xStartPosition, 12);
+		colorSelection(displayColor[3]);
+		cout << "4. Exit";
+
+		key = _getch();
+
+		if (key == 72 && (counter >= 2 && counter <= 4)) // 72 - up arrow (keyboard)
+			counter--;
+		if (key == 80 && (counter >= 1 && counter <= 3)) // 80 - down arrow (keyboard)
+			counter++;
+
+		//carriage return - enter (keyboard)
+		if (key == '\r')
+		{
+			for (int i = 0; i < 4; i++)
+				displayColor[i] = WHITE;
+
+			system("CLS");
+
+			if (counter == 1)
+			{
+
+				break;
+			}
+			else if (counter == 2)
+			{
+				
+				break;
+			}
+			else if (counter == 3)
+			{
+				
+				break;
+			}
+			else if (counter == 4)
+			{
+				exit(EXIT_SUCCESS);
+			}
+		}
+		for (int i = 0; i < 4; i++)
+			displayColor[i] = WHITE;
+	}
+}
+
 int main()
 {
 	mainMenu();
