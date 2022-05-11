@@ -109,6 +109,8 @@ void rulesLogo()
 }
 
 void mainMenu();
+void rulesMenu();
+void helpMenu();
 
 void mainMenu()
 {
@@ -160,12 +162,12 @@ void mainMenu()
 			}
 			else if (counter == 2)
 			{
-				
+				helpMenu();
 				break;
 			}
 			else if (counter == 3)
 			{
-				
+				rulesMenu();
 				break;
 			}
 			else if (counter == 4)
