@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include <thread>
 #include <stdio.h>
 #include <Windows.h>
@@ -111,6 +112,7 @@ void rulesLogo()
 void mainMenu();
 void rulesMenu();
 void helpMenu();
+void game();
 
 void mainMenu()
 {
@@ -157,7 +159,7 @@ void mainMenu()
 
 			if (counter == 1)
 			{
-
+				game();
 				break;
 			}
 			else if (counter == 2)
@@ -276,8 +278,71 @@ void rulesMenu()
 	}
 }
 
+void game()
+{
+	string gridTop[1] = {"*"};
+	string gridJungle[2] = { "*", "*"};
+	string gridMid[3] = { "*", "*", "*" };
+	string gridBot[4] = {"*", "*", "*" , "*"};
+
+	gotoxy(33, 7);
+	
+	for (int i = 0; i < 4; i++)
+	{	
+		cout << gridBot[i] << setw(10);
+	}
+
+	gotoxy(29, 5);
+
+	for (int i = 0; i < 3; i++)
+	{
+		cout << gridMid[i] << setw(10);
+	}
+
+	gotoxy(34, 3);
+
+	for (int i = 0; i < 2; i++)
+	{
+		cout << gridJungle[i] << setw(10);
+	}
+
+	gotoxy(39, 1);
+
+	cout << gridTop[0];
+
+	gotoxy(30, 8);
+	cout << "0        1        0        1        0";
+	gotoxy(30, 9);
+	cout << "1        0        1        0        1";
+
+	gotoxy(33, 11);
+
+	for (int i = 0; i < 4; i++)
+	{
+		cout << gridBot[i] << setw(10);
+	}
+
+	gotoxy(29, 13);
+
+	for (int i = 0; i < 3; i++)
+	{
+		cout << gridMid[i] << setw(10);
+	}
+
+	gotoxy(34, 15);
+
+	for (int i = 0; i < 2; i++)
+	{
+		cout << gridJungle[i] << setw(10);
+	}
+
+	gotoxy(39, 17);
+
+	cout << gridTop[0];
+}
+
 int main()
 {
 	mainMenu();
-	return 0;
+	
 }
