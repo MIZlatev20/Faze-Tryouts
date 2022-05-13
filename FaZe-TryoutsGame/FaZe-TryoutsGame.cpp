@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <Windows.h>
 #include <conio.h>
+#include <cstdlib>
 
 using namespace std;
 
@@ -83,7 +84,6 @@ void helpLogo()
 {
 	colorSelection(YELLOW);
 	cout << R"(
-
 					.------..------..------..------.
 					|H.--. ||E.--. ||L.--. ||P.--. |
 					| :/\: || (\/) || :/\: || :/\: |
@@ -98,7 +98,6 @@ void rulesLogo()
 {
 	colorSelection(YELLOW);
 	cout << R"(
-
 					.------..------..------..------..------.
 					|R.--. ||U.--. ||L.--. ||E.--. ||S.--. |
 					| :(): || (\/) || :/\: || (\/) || :/\: |
@@ -280,15 +279,74 @@ void rulesMenu()
 
 void game()
 {
-	string gridTop[1] = {"*"};
-	string gridJungle[2] = { "*", "*"};
+	string gridTop[1] = { "*" };
+	string gridJungle[2] = { "*", "*" };
 	string gridMid[3] = { "*", "*", "*" };
-	string gridBot[4] = {"*", "*", "*" , "*"};
+	string gridBot[4] = { "*", "*", "*" , "*" };
+
+	srand(time(0));
+
+	int topcard1 = rand() % 2;
+	int topcard2 = rand() % 2;
+	int topcard3 = rand() % 2;
+	int topcard4 = rand() % 2;
+	int topcard5 = rand() % 2;
+
+	int bottomcard1 = rand() % 2;
+	int bottomcard2 = rand() % 2;
+	int bottomcard3 = rand() % 2;
+	int bottomcard4 = rand() % 2;
+	int bottomcard5 = rand() % 2;
+
+	if (topcard1 == 0)
+	{
+		bottomcard1 = 1;
+	}
+	else if (topcard1 == 1)
+	{
+		bottomcard1 = 0;
+	}
+
+	if (topcard2 == 0)
+	{
+		bottomcard2 = 1;
+	}
+	else if (topcard2 == 1)
+	{
+		bottomcard2 = 0;
+	}
+
+	if (topcard3 == 0)
+	{
+		bottomcard3 = 1;
+	}
+	else if (topcard3 == 1)
+	{
+		bottomcard3 = 0;
+	}
+
+	if (topcard4 == 0)
+	{
+		bottomcard4 = 1;
+	}
+	else if (topcard4 == 1)
+	{
+		bottomcard4 = 0;
+	}
+
+	if (topcard5 == 0)
+	{
+		bottomcard5 = 1;
+	}
+	else if (topcard5 == 1)
+	{
+		bottomcard5 = 0;
+	}
 
 	gotoxy(33, 7);
-	
+
 	for (int i = 0; i < 4; i++)
-	{	
+	{
 		cout << gridBot[i] << setw(10);
 	}
 
@@ -311,9 +369,9 @@ void game()
 	cout << gridTop[0];
 
 	gotoxy(30, 8);
-	cout << "0        1        0        1        0";
+	cout << topcard1 << setw(9) << topcard2 << setw(9) << topcard3 << setw(9) << topcard4 << setw(9) << topcard5 << endl;
 	gotoxy(30, 9);
-	cout << "1        0        1        0        1";
+	cout << bottomcard1 << setw(9) << bottomcard2 << setw(9) << bottomcard3 << setw(9) << bottomcard4 << setw(9) << bottomcard5 << endl;
 
 	gotoxy(33, 11);
 
@@ -344,5 +402,4 @@ void game()
 int main()
 {
 	mainMenu();
-	
 }
