@@ -381,25 +381,25 @@ void game()
 		bottomcard5 = 0;
 	}
 
-	gotoxy(33, 7);
+	gotoxy(34, 7);
 
 	for (int i = 0; i < 4; i++)
 	{
-		cout << gridBot[i] << setw(10);
+		cout << gridBot[i] << setw(8);
 	}
 
-	gotoxy(29, 5);
+	gotoxy(31, 5);
 
 	for (int i = 0; i < 3; i++)
 	{
-		cout << gridMid[i] << setw(10);
+		cout << gridMid[i] << setw(8);
 	}
 
-	gotoxy(34, 3);
+	gotoxy(35, 3);
 
 	for (int i = 0; i < 2; i++)
 	{
-		cout << gridJungle[i] << setw(10);
+		cout << gridJungle[i] << setw(8);
 	}
 
 	gotoxy(39, 1);
@@ -407,29 +407,29 @@ void game()
 	cout << gridTop[0];
 
 	gotoxy(30, 8);
-	cout << topcard1 << setw(9) << topcard2 << setw(9) << topcard3 << setw(9) << topcard4 << setw(9) << topcard5 << endl;
+	cout << topcard1 << setw(8) << topcard2 << setw(8) << topcard3 << setw(8) << topcard4 << setw(8) << topcard5 << endl;
 	gotoxy(30, 9);
-	cout << bottomcard1 << setw(9) << bottomcard2 << setw(9) << bottomcard3 << setw(9) << bottomcard4 << setw(9) << bottomcard5 << endl;
+	cout << bottomcard1 << setw(8) << bottomcard2 << setw(8) << bottomcard3 << setw(8) << bottomcard4 << setw(8) << bottomcard5 << endl;
 
-	gotoxy(33, 11);
+	gotoxy(34, 11);
 
 	for (int i = 0; i < 4; i++)
 	{
-		cout << gridBot[i] << setw(10);
+		cout << gridBot[i] << setw(8);
 	}
 
-	gotoxy(29, 13);
+	gotoxy(31, 13);
 
 	for (int i = 0; i < 3; i++)
 	{
-		cout << gridMid[i] << setw(10);
+		cout << gridMid[i] << setw(8);
 	}
 
-	gotoxy(34, 15);
+	gotoxy(35, 15);
 
 	for (int i = 0; i < 2; i++)
 	{
-		cout << gridJungle[i] << setw(10);
+		cout << gridJungle[i] << setw(8);
 	}
 
 	gotoxy(39, 17);
