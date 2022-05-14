@@ -283,6 +283,7 @@ void game()
 	string gridJungle[2] = { "*", "*" };
 	string gridMid[3] = { "*", "*", "*" };
 	string gridBot[4] = { "*", "*", "*" , "*" };
+	string gridSupp[5] = { "*", "*", "*" , "*", "*" };
 
 	srand(time(0));
 
@@ -291,12 +292,14 @@ void game()
 	int topcard3 = rand() % 2;
 	int topcard4 = rand() % 2;
 	int topcard5 = rand() % 2;
+	int topcard6 = rand() % 2;
 
 	int bottomcard1 = rand() % 2;
 	int bottomcard2 = rand() % 2;
 	int bottomcard3 = rand() % 2;
 	int bottomcard4 = rand() % 2;
 	int bottomcard5 = rand() % 2;
+	int bottomcard6 = rand() % 2;
 
 	int andcard0[8] = { 01 , 01 , 01 , 01 , 01 , 01 , 01, 01 };
 	int andcard0counter = 0;
@@ -337,102 +340,85 @@ void game()
 	}
 
 	if (topcard1 == 0)
-	{
 		bottomcard1 = 1;
-	}
 	else if (topcard1 == 1)
-	{
 		bottomcard1 = 0;
-	}
 
 	if (topcard2 == 0)
-	{
 		bottomcard2 = 1;
-	}
 	else if (topcard2 == 1)
-	{
 		bottomcard2 = 0;
-	}
 
 	if (topcard3 == 0)
-	{
 		bottomcard3 = 1;
-	}
 	else if (topcard3 == 1)
-	{
 		bottomcard3 = 0;
-	}
 
 	if (topcard4 == 0)
-	{
 		bottomcard4 = 1;
-	}
 	else if (topcard4 == 1)
-	{
 		bottomcard4 = 0;
-	}
 
 	if (topcard5 == 0)
-	{
 		bottomcard5 = 1;
-	}
 	else if (topcard5 == 1)
-	{
 		bottomcard5 = 0;
-	}
 
-	gotoxy(34, 7);
+	if (topcard6 == 0)
+		bottomcard6 = 1;
+	else if (topcard6 == 1)
+		bottomcard6 = 0;
+
+	gotoxy(34, 10);
+
+	for (int i = 0; i < 5; i++)
+		cout << gridSupp[i] << setw(8);
+
+	gotoxy(31, 8);
 
 	for (int i = 0; i < 4; i++)
-	{
 		cout << gridBot[i] << setw(8);
-	}
 
-	gotoxy(31, 5);
+	gotoxy(35, 6);
 
 	for (int i = 0; i < 3; i++)
-	{
 		cout << gridMid[i] << setw(8);
-	}
 
-	gotoxy(35, 3);
+	gotoxy(39, 4);
 
 	for (int i = 0; i < 2; i++)
-	{
 		cout << gridJungle[i] << setw(8);
-	}
 
-	gotoxy(39, 1);
+	gotoxy(43, 2);
 
 	cout << gridTop[0];
 
-	gotoxy(30, 8);
-	cout << topcard1 << setw(8) << topcard2 << setw(8) << topcard3 << setw(8) << topcard4 << setw(8) << topcard5 << endl;
-	gotoxy(30, 9);
-	cout << bottomcard1 << setw(8) << bottomcard2 << setw(8) << bottomcard3 << setw(8) << bottomcard4 << setw(8) << bottomcard5 << endl;
+	gotoxy(30, 12);
+	cout << topcard1 << setw(8) << topcard2 << setw(8) << topcard3 << setw(8) << topcard4 << setw(8) << topcard5 << setw(8) << topcard6 << endl;
+	gotoxy(30, 13);
+	cout << bottomcard1 << setw(8) << bottomcard2 << setw(8) << bottomcard3 << setw(8) << bottomcard4 << setw(8) << bottomcard5 << setw(8) << bottomcard6 << endl;
 
-	gotoxy(34, 11);
+	gotoxy(34, 15);
+
+	for (int i = 0; i < 5; i++)
+		cout << gridSupp[i] << setw(8);
+
+	gotoxy(31, 17);
 
 	for (int i = 0; i < 4; i++)
-	{
 		cout << gridBot[i] << setw(8);
-	}
 
-	gotoxy(31, 13);
+	gotoxy(35, 19);
 
 	for (int i = 0; i < 3; i++)
-	{
 		cout << gridMid[i] << setw(8);
-	}
 
-	gotoxy(35, 15);
+	gotoxy(39, 21);
 
 	for (int i = 0; i < 2; i++)
-	{
 		cout << gridJungle[i] << setw(8);
-	}
 
-	gotoxy(39, 17);
+	gotoxy(43, 23);
 
 	cout << gridTop[0] << endl;
 
@@ -442,29 +428,18 @@ void game()
 	for (int i = 0; i < 5; i++)
 	{
 		if (yourcards[i] == 01)
-		{
 			andcard0counter++;
-		}
 		else if (yourcards[i] == 11)
-		{
 			andcard1counter++;
-		}
 		else if (yourcards[i] == 02)
-		{
 			orcard0counter++;
-		}
 		else if (yourcards[i] == 12)
-		{
 			orcard1counter++;
-		}
 		else if (yourcards[i] == 03)
-		{
 			xorcard0counter++;
-		}
 		else if (yourcards[i] == 13)
-		{
 			xorcard1counter++;
-		}
+
 		cout << yourcards[i] << " ";
 	}
 
