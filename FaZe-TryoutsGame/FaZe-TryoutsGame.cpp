@@ -298,6 +298,33 @@ void game()
 	int bottomcard4 = rand() % 2;
 	int bottomcard5 = rand() % 2;
 
+	int andcard0[8] = { 01 , 01 , 01 , 01 , 01 , 01 , 01, 01 };
+	int andcard0counter = 0;
+	int andcard1[8] = { 11 , 11 , 11 , 11 , 11 , 11 , 11 , 11 };
+	int andcard1counter = 0;
+
+	int orcard0[8] = { 02 , 02 , 02 , 02 , 02 , 02 , 02 , 02 };
+	int orcard0counter = 0;
+	int orcard1[8] = { 12 , 12 , 12 , 12 , 12 , 12 , 12 , 12 };
+	int orcard1counter = 0;
+
+	int xorcard0[8] = { 03 , 03 , 03 , 03 , 03 , 03 , 03 , 03 };
+	int xorcard0counter = 0;
+	int xorcard1[8] = { 13 , 13 , 13 , 13 , 13 , 13 , 13 , 13 };
+	int xorcard1counter = 0;
+
+	int cards[48] =
+	{
+		01 , 01 , 01 , 01 , 01 , 01 , 01 , 01 ,
+		11 , 11 , 11 , 11 , 11 , 11 , 11 , 11 ,
+		02 , 02 , 02 , 02 , 02 , 02 , 02 , 02 ,
+		12 , 12 , 12 , 12 , 12 , 12 , 12 , 12 ,
+		03 , 03 , 03 , 03 , 03 , 03 , 03 , 03 ,
+		13 , 13 , 13 , 13 , 13 , 13 , 13 , 13
+	};
+
+	int yourcards[5];
+
 	if (topcard1 == 0)
 	{
 		bottomcard1 = 1;
