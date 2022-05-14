@@ -324,6 +324,17 @@ void game()
 	};
 
 	int yourcards[5];
+	int randomcard = 0;
+
+	int cardsum = 0;
+
+	for (int i = 0; i < 5; i++)
+	{
+		cardsum++;
+		randomcard = rand() % 48;
+
+		yourcards[i] = cards[randomcard];
+	}
 
 	if (topcard1 == 0)
 	{
