@@ -434,7 +434,56 @@ void game()
 
 	gotoxy(39, 17);
 
-	cout << gridTop[0];
+	cout << gridTop[0] << endl;
+
+	cout << "Your cards: " << endl;
+	cout << endl;
+
+	for (int i = 0; i < 5; i++)
+	{
+		if (yourcards[i] == 01)
+		{
+			andcard0counter++;
+		}
+		else if (yourcards[i] == 11)
+		{
+			andcard1counter++;
+		}
+		else if (yourcards[i] == 02)
+		{
+			orcard0counter++;
+		}
+		else if (yourcards[i] == 12)
+		{
+			orcard1counter++;
+		}
+		else if (yourcards[i] == 03)
+		{
+			xorcard0counter++;
+		}
+		else if (yourcards[i] == 13)
+		{
+			xorcard1counter++;
+		}
+		cout << yourcards[i] << " ";
+	}
+
+	cout << endl;
+	cout << endl;
+
+	cout << "----------------" << endl;
+	cout << "|" << "AND-0 Cards: " << andcard0counter << "|" << endl;
+	cout << "----------------" << endl;
+	cout << "|" << "AND-1 Cards: " << andcard1counter << "|" << endl;
+	cout << "----------------" << endl;
+	cout << "|" << "OR-0 Cards: " << orcard0counter << " |" << endl;
+	cout << "----------------" << endl;
+	cout << "|" << "OR-1 Cards: " << orcard1counter << " |" << endl;
+	cout << "----------------" << endl;
+	cout << "|" << "XOR-0 Cards: " << xorcard0counter << "|" << endl;
+	cout << "----------------" << endl;
+	cout << "|" << "XOR-1 Cards: " << xorcard1counter << "|" << endl;
+	cout << "----------------" << endl;
 }
 
 int main()
