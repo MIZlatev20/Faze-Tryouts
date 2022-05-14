@@ -301,32 +301,32 @@ void game()
 	int bottomcard5 = rand() % 2;
 	int bottomcard6 = rand() % 2;
 
-	int andcard0[8] = { 01 , 01 , 01 , 01 , 01 , 01 , 01, 01 };
+	string andcard0[8] = { "0[AND]" , "0[AND]" , "0[AND]" ,"0[AND]" , "0[AND]" , "0[AND]" , "0[AND]", "0[AND]" };
 	int andcard0counter = 0;
-	int andcard1[8] = { 11 , 11 , 11 , 11 , 11 , 11 , 11 , 11 };
+	string andcard1[8] = { "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" };
 	int andcard1counter = 0;
 
-	int orcard0[8] = { 02 , 02 , 02 , 02 , 02 , 02 , 02 , 02 };
+	string orcard0[8] = { "0[OR]" , "0[OR]" , "0[OR]" ,"0[OR]" , "0[OR]" , "0[OR]" , "0[OR]", "0[OR]" };
 	int orcard0counter = 0;
-	int orcard1[8] = { 12 , 12 , 12 , 12 , 12 , 12 , 12 , 12 };
+	string orcard1[8] = { "1[OR]" , "1[OR]" , "1[OR]" , "1[OR]" , "1[OR]" , "1[OR]" , "1[OR]" , "1[OR]" };
 	int orcard1counter = 0;
 
-	int xorcard0[8] = { 03 , 03 , 03 , 03 , 03 , 03 , 03 , 03 };
+	string xorcard0[8] = { "0[XOR]" , "0[XOR]" , "0[XOR]" ,"0[XOR]" , "0[XOR]" , "0[XOR]" , "0[XOR]", "0[XOR]" };
 	int xorcard0counter = 0;
-	int xorcard1[8] = { 13 , 13 , 13 , 13 , 13 , 13 , 13 , 13 };
+	string xorcard1[8] = { "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" };
 	int xorcard1counter = 0;
 
-	int cards[48] =
+	string cards[48] =
 	{
-		01 , 01 , 01 , 01 , 01 , 01 , 01 , 01 ,
-		11 , 11 , 11 , 11 , 11 , 11 , 11 , 11 ,
-		02 , 02 , 02 , 02 , 02 , 02 , 02 , 02 ,
-		12 , 12 , 12 , 12 , 12 , 12 , 12 , 12 ,
-		03 , 03 , 03 , 03 , 03 , 03 , 03 , 03 ,
-		13 , 13 , 13 , 13 , 13 , 13 , 13 , 13
+		"0[AND]" , "0[AND]" , "0[AND]" ,"0[AND]" , "0[AND]" , "0[AND]" , "0[AND]", "0[AND]" ,
+		"1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" ,
+		"0[OR]" , "0[OR]" , "0[OR]" ,"0[OR]" , "0[OR]" , "0[OR]" , "0[OR]", "0[OR]" ,
+		"1[OR]" , "1[OR]" , "1[OR]" , "1[OR]" , "1[OR]" , "1[OR]" , "1[OR]" , "1[OR]" ,
+		"0[XOR]" , "0[XOR]" , "0[XOR]" ,"0[XOR]" , "0[XOR]" , "0[XOR]" , "0[XOR]", "0[XOR]" ,
+		"1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]"
 	};
 
-	int yourcards[5];
+	string yourcards[5];
 	int randomcard = 0;
 
 	int cardsum = 0;
@@ -427,19 +427,18 @@ void game()
 
 	for (int i = 0; i < 5; i++)
 	{
-		if (yourcards[i] == 01)
+		if (yourcards[i] == "0[AND]")
 			andcard0counter++;
-		else if (yourcards[i] == 11)
+		else if (yourcards[i] == "1[AND]")
 			andcard1counter++;
-		else if (yourcards[i] == 02)
+		else if (yourcards[i] == "0[OR]")
 			orcard0counter++;
-		else if (yourcards[i] == 12)
+		else if (yourcards[i] == "1[OR]")
 			orcard1counter++;
-		else if (yourcards[i] == 03)
+		else if (yourcards[i] == "0[XOR]")
 			xorcard0counter++;
-		else if (yourcards[i] == 13)
+		else if (yourcards[i] == "1[XOR]")
 			xorcard1counter++;
-
 		cout << yourcards[i] << " ";
 	}
 
