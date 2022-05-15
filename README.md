@@ -28,12 +28,7 @@
     <img src="https://img.icons8.com/color/48/000000/visual-studio-code-2019.png" width=52px height=52px/>
     <img src="https://img.icons8.com/glyph-neue/344/github.png" width=52px height=52px>
 
-## <p id = "docAndPres"> 📄 Documentation and presentation</p>
-You can find them on the following links:
-<br>
-<a href="https://codingburgas-my.sharepoint.com/:w:/g/personal/dndonchev20_codingburgas_bg/EZBtZE0HSzVNqN5Yv2wHTdIB0EyNiJTUaETccR86eT95Sg?e=BeabPZ">Documentation</a>
-<br>
-<a href="https://codingburgas-my.sharepoint.com/:p:/g/personal/dndonchev20_codingburgas_bg/EZ35ERZ3V5BFgRtNFyJ1s74B-PAO-JzO_ZIib-JKRmeHNA?e=H3EFuD">Presentation</a>
+
 
 ## <p id = "about">🧐 About <a name = "about">our project</a></p>
 А project that wants to digitalise b00le0.
