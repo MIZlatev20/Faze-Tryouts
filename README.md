@@ -7,7 +7,6 @@
 ## 📝 Table of Contents
 + [Our team](#teamInfo)
 + [Used technologies and tools](#languagesAndtools)
-+ [Documentation and presentation](#docAndPres)
 + [About the game](#about)
 + [Installation](#install)
 
