@@ -15,12 +15,14 @@ const int xStartPosition = 50;
 
 int colorSelectionVar;
 
+// Grid
 string lRowGrid[1] = { "*" };
 string foRowGrid[2] = { "*", "*" };
 string tRowGrid[3] = { "*", "*", "*" };
 string sRowGrid[4] = { "*", "*", "*" , "*" };
 string fRowGrid[5] = { "*", "*", "*" , "*", "*" };
 
+// Initializing the initial cards
 int topCard1 = rand() % 2;
 int topCard2 = rand() % 2;
 int topCard3 = rand() % 2;
@@ -35,6 +37,7 @@ int bottomCard4 = rand() % 2;
 int bottomCard5 = rand() % 2;
 int bottomCard6 = rand() % 2;
 
+// Initializing the different types of cards
 string andCard0[8] = { "0[AND]" , "0[AND]" , "0[AND]" ,"0[AND]" , "0[AND]" , "0[AND]" , "0[AND]", "0[AND]" };
 int andCard0Counter = 0;
 string andCard1[8] = { "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" };
@@ -50,6 +53,7 @@ int xorCard0Counter = 0;
 string xorcard1[8] = { "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" };
 int xorCard1Counter = 0;
 
+// Initializing the card deck
 string cards[48] =
 {
 	"0[AND]" , "0[AND]" , "0[AND]" ,"0[AND]" , "0[AND]" , "0[AND]" , "0[AND]", "0[AND]" ,
@@ -348,6 +352,7 @@ void game()
 	else if (topCard6 == 1)
 		bottomCard6 = 0;
 
+	// Making the grid
 	gotoxy(34, 10);
 
 	for (int i = 0; i < 5; i++)
@@ -403,7 +408,8 @@ void game()
 
 	cout << "Your cards: " << endl;
 	cout << endl;
-
+	
+	// Giving cards to the player
 	for (int i = 0; i < 5; i++)
 	{
 		if (yourCards[i] == "0[AND]")
@@ -424,6 +430,7 @@ void game()
 	cout << endl;
 	cout << endl;
 
+	// Showing how many cards of each type you got
 	cout << "----------------" << endl;
 	cout << "|" << "AND-0 Cards: " << andCard0Counter << "|" << endl;
 	cout << "----------------" << endl;
@@ -438,10 +445,12 @@ void game()
 	cout << "|" << "XOR-1 Cards: " << xorCard1Counter << "|" << endl;
 	cout << "----------------" << endl;
 
+	// Input the place on the grid
 	int cardPlace;
 	cout << "Choose a number from 1 to " << cardSum << ":";
 	cin >> cardPlace;
 
+	// Checking if the number is a place on the grid
 	while (cardPlace < 1 || cardPlace > cardSum)
 	{
 		cin.ignore();
@@ -449,10 +458,12 @@ void game()
 		cin >> cardPlace;
 	}
 
+	// Input the card
 	string chosenCard;
 	cout << "Choose a card(Please write the whole name. Example: 0[OR])";
 	cin >> chosenCard;
 
+	// Checking if you have this card
 	while (chosenCard != "0[AND]" && chosenCard != "1[AND]" && chosenCard != "0[OR]" && chosenCard != "1[OR]" && chosenCard != "0[XOR]" && chosenCard != "1[XOR]")
 	{
 		cin.ignore();
