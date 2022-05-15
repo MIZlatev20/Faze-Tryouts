@@ -8,20 +8,62 @@
 
 using namespace std;
 
-int nFieldWidth = 12;
-int nFieldHeight = 18;
-
 int nScreenWidth = 120;
 int nScreenHeight = 30;
 
-int nCurrentY = 0;
-
 const int xStartPosition = 50;
 
-wchar_t* pField = nullptr;
-
 int colorSelectionVar;
-int tempScore = 0;
+
+string gridTop[1] = { "*" };
+string gridJungle[2] = { "*", "*" };
+string gridMid[3] = { "*", "*", "*" };
+string gridBot[4] = { "*", "*", "*" , "*" };
+string gridSupp[5] = { "*", "*", "*" , "*", "*" };
+
+int topCard1 = rand() % 2;
+int topCard2 = rand() % 2;
+int topCard3 = rand() % 2;
+int topCard4 = rand() % 2;
+int topCard5 = rand() % 2;
+int topCard6 = rand() % 2;
+
+int bottomCard1 = rand() % 2;
+int bottomCard2 = rand() % 2;
+int bottomCard3 = rand() % 2;
+int bottomCard4 = rand() % 2;
+int bottomCard5 = rand() % 2;
+int bottomCard6 = rand() % 2;
+
+string andCard0[8] = { "0[AND]" , "0[AND]" , "0[AND]" ,"0[AND]" , "0[AND]" , "0[AND]" , "0[AND]", "0[AND]" };
+int andCard0Counter = 0;
+string andCard1[8] = { "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" };
+int andCard1Counter = 0;
+
+string orCard0[8] = { "0[OR]" , "0[OR]" , "0[OR]" ,"0[OR]" , "0[OR]" , "0[OR]" , "0[OR]", "0[OR]" };
+int orCard0Counter = 0;
+string orcard1[8] = { "1[OR]" , "1[OR]" , "1[OR]" , "1[OR]" , "1[OR]" , "1[OR]" , "1[OR]" , "1[OR]" };
+int orCard1Counter = 0;
+
+string xorCard0[8] = { "0[XOR]" , "0[XOR]" , "0[XOR]" ,"0[XOR]" , "0[XOR]" , "0[XOR]" , "0[XOR]", "0[XOR]" };
+int xorCard0Counter = 0;
+string xorcard1[8] = { "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" };
+int xorCard1Counter = 0;
+
+string cards[48] =
+{
+	"0[AND]" , "0[AND]" , "0[AND]" ,"0[AND]" , "0[AND]" , "0[AND]" , "0[AND]", "0[AND]" ,
+	"1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" ,
+	"0[OR]" , "0[OR]" , "0[OR]" ,"0[OR]" , "0[OR]" , "0[OR]" , "0[OR]", "0[OR]" ,
+	"1[OR]" , "1[OR]" , "1[OR]" , "1[OR]" , "1[OR]" , "1[OR]" , "1[OR]" , "1[OR]" ,
+	"0[XOR]" , "0[XOR]" , "0[XOR]" ,"0[XOR]" , "0[XOR]" , "0[XOR]" , "0[XOR]", "0[XOR]" ,
+	"1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]"
+};
+
+string yourCards[5];
+int randomCard = 0;
+
+int cardSum = 0;
 
 
 enum
@@ -268,58 +310,6 @@ void rulesMenu()
 
 void game()
 {
-	string gridTop[1] = { "*" };
-	string gridJungle[2] = { "*", "*" };
-	string gridMid[3] = { "*", "*", "*" };
-	string gridBot[4] = { "*", "*", "*" , "*" };
-	string gridSupp[5] = { "*", "*", "*" , "*", "*" };
-
-	srand(time(0));
-
-	int topCard1 = rand() % 2;
-	int topCard2 = rand() % 2;
-	int topCard3 = rand() % 2;
-	int topCard4 = rand() % 2;
-	int topCard5 = rand() % 2;
-	int topCard6 = rand() % 2;
-
-	int bottomCard1 = rand() % 2;
-	int bottomCard2 = rand() % 2;
-	int bottomCard3 = rand() % 2;
-	int bottomCard4 = rand() % 2;
-	int bottomCard5 = rand() % 2;
-	int bottomCard6 = rand() % 2;
-
-	string andCard0[8] = { "0[AND]" , "0[AND]" , "0[AND]" ,"0[AND]" , "0[AND]" , "0[AND]" , "0[AND]", "0[AND]" };
-	int andCard0Counter = 0;
-	string andCard1[8] = { "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" };
-	int andCard1Counter = 0;
-
-	string orCard0[8] = { "0[OR]" , "0[OR]" , "0[OR]" ,"0[OR]" , "0[OR]" , "0[OR]" , "0[OR]", "0[OR]" };
-	int orCard0Counter = 0;
-	string orcard1[8] = { "1[OR]" , "1[OR]" , "1[OR]" , "1[OR]" , "1[OR]" , "1[OR]" , "1[OR]" , "1[OR]" };
-	int orCard1Counter = 0;
-
-	string xorCard0[8] = { "0[XOR]" , "0[XOR]" , "0[XOR]" ,"0[XOR]" , "0[XOR]" , "0[XOR]" , "0[XOR]", "0[XOR]" };
-	int xorCard0Counter = 0;
-	string xorcard1[8] = { "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" };
-	int xorCard1Counter = 0;
-
-	string cards[48] =
-	{
-		"0[AND]" , "0[AND]" , "0[AND]" ,"0[AND]" , "0[AND]" , "0[AND]" , "0[AND]", "0[AND]" ,
-		"1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" ,
-		"0[OR]" , "0[OR]" , "0[OR]" ,"0[OR]" , "0[OR]" , "0[OR]" , "0[OR]", "0[OR]" ,
-		"1[OR]" , "1[OR]" , "1[OR]" , "1[OR]" , "1[OR]" , "1[OR]" , "1[OR]" , "1[OR]" ,
-		"0[XOR]" , "0[XOR]" , "0[XOR]" ,"0[XOR]" , "0[XOR]" , "0[XOR]" , "0[XOR]", "0[XOR]" ,
-		"1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]"
-	};
-
-	string yourCards[5];
-	int randomCard = 0;
-
-	int cardSum = 0;
-
 	for (int i = 0; i < 5; i++)
 	{
 		cardSum++;
@@ -447,9 +437,35 @@ void game()
 	cout << "----------------" << endl;
 	cout << "|" << "XOR-1 Cards: " << xorCard1Counter << "|" << endl;
 	cout << "----------------" << endl;
+
+	int cardPlace;
+	cout << "Choose a number from 1 to " << cardSum << ":";
+	cin >> cardPlace;
+
+	while (cardPlace < 1 || cardPlace > cardSum)
+	{
+		cin.ignore();
+		cout << "Invalid number. Please choose from 1 to " << cardSum << ":";
+		cin >> cardPlace;
+	}
+
+	string chosenCard;
+	cout << "Choose a card(Please write the whole name. Example: 0[OR])";
+	cin >> chosenCard;
+
+	while (chosenCard != "0[AND]" && chosenCard != "1[AND]" && chosenCard != "0[OR]" && chosenCard != "1[OR]" && chosenCard != "0[XOR]" && chosenCard != "1[XOR]")
+	{
+		cin.ignore();
+		cout << "Invalid number. Please check if you've written the name of the card correctly!" << endl;
+		cout << "Choose a card(Please write the whole name. Example: 0[OR])";
+		cin >> chosenCard;
+	}
+
 }
 
 int main()
 {
+	srand(time(0));
+
 	mainMenu();
 }
