@@ -27,19 +27,8 @@ int tempScore = 0;
 enum
 {
 	BLACK = 0,
-	DARKBLUE = FOREGROUND_BLUE,
-	DARKGREEN = FOREGROUND_GREEN,
-	DARKCYAN = FOREGROUND_GREEN | FOREGROUND_BLUE,
-	DARKRED = FOREGROUND_RED,
-	DARKMAGENTA = FOREGROUND_RED | FOREGROUND_BLUE,
-	DARKYELLOW = FOREGROUND_RED | FOREGROUND_GREEN,
-	DARKGRAY = FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE,
-	GRAY = FOREGROUND_INTENSITY,
-	BLUE = FOREGROUND_INTENSITY | FOREGROUND_BLUE,
 	GREEN = FOREGROUND_INTENSITY | FOREGROUND_GREEN,
-	CYAN = FOREGROUND_INTENSITY | FOREGROUND_GREEN | FOREGROUND_BLUE,
 	RED = FOREGROUND_INTENSITY | FOREGROUND_RED,
-	MAGENTA = FOREGROUND_INTENSITY | FOREGROUND_RED | FOREGROUND_BLUE,
 	YELLOW = FOREGROUND_INTENSITY | FOREGROUND_RED | FOREGROUND_GREEN,
 	WHITE = FOREGROUND_INTENSITY | FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE,
 };
@@ -287,34 +276,34 @@ void game()
 
 	srand(time(0));
 
-	int topcard1 = rand() % 2;
-	int topcard2 = rand() % 2;
-	int topcard3 = rand() % 2;
-	int topcard4 = rand() % 2;
-	int topcard5 = rand() % 2;
-	int topcard6 = rand() % 2;
+	int topCard1 = rand() % 2;
+	int topCard2 = rand() % 2;
+	int topCard3 = rand() % 2;
+	int topCard4 = rand() % 2;
+	int topCard5 = rand() % 2;
+	int topCard6 = rand() % 2;
 
-	int bottomcard1 = rand() % 2;
-	int bottomcard2 = rand() % 2;
-	int bottomcard3 = rand() % 2;
-	int bottomcard4 = rand() % 2;
-	int bottomcard5 = rand() % 2;
-	int bottomcard6 = rand() % 2;
+	int bottomCard1 = rand() % 2;
+	int bottomCard2 = rand() % 2;
+	int bottomCard3 = rand() % 2;
+	int bottomCard4 = rand() % 2;
+	int bottomCard5 = rand() % 2;
+	int bottomCard6 = rand() % 2;
 
-	string andcard0[8] = { "0[AND]" , "0[AND]" , "0[AND]" ,"0[AND]" , "0[AND]" , "0[AND]" , "0[AND]", "0[AND]" };
-	int andcard0counter = 0;
-	string andcard1[8] = { "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" };
-	int andcard1counter = 0;
+	string andCard0[8] = { "0[AND]" , "0[AND]" , "0[AND]" ,"0[AND]" , "0[AND]" , "0[AND]" , "0[AND]", "0[AND]" };
+	int andCard0Counter = 0;
+	string andCard1[8] = { "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" , "1[AND]" };
+	int andCard1Counter = 0;
 
-	string orcard0[8] = { "0[OR]" , "0[OR]" , "0[OR]" ,"0[OR]" , "0[OR]" , "0[OR]" , "0[OR]", "0[OR]" };
-	int orcard0counter = 0;
+	string orCard0[8] = { "0[OR]" , "0[OR]" , "0[OR]" ,"0[OR]" , "0[OR]" , "0[OR]" , "0[OR]", "0[OR]" };
+	int orCard0Counter = 0;
 	string orcard1[8] = { "1[OR]" , "1[OR]" , "1[OR]" , "1[OR]" , "1[OR]" , "1[OR]" , "1[OR]" , "1[OR]" };
-	int orcard1counter = 0;
+	int orCard1Counter = 0;
 
-	string xorcard0[8] = { "0[XOR]" , "0[XOR]" , "0[XOR]" ,"0[XOR]" , "0[XOR]" , "0[XOR]" , "0[XOR]", "0[XOR]" };
-	int xorcard0counter = 0;
+	string xorCard0[8] = { "0[XOR]" , "0[XOR]" , "0[XOR]" ,"0[XOR]" , "0[XOR]" , "0[XOR]" , "0[XOR]", "0[XOR]" };
+	int xorCard0Counter = 0;
 	string xorcard1[8] = { "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" };
-	int xorcard1counter = 0;
+	int xorCard1Counter = 0;
 
 	string cards[48] =
 	{
@@ -326,48 +315,48 @@ void game()
 		"1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]" , "1[XOR]"
 	};
 
-	string yourcards[5];
-	int randomcard = 0;
+	string yourCards[5];
+	int randomCard = 0;
 
-	int cardsum = 0;
+	int cardSum = 0;
 
 	for (int i = 0; i < 5; i++)
 	{
-		cardsum++;
-		randomcard = rand() % 48;
+		cardSum++;
+		randomCard = rand() % 48;
 
-		yourcards[i] = cards[randomcard];
+		yourCards[i] = cards[randomCard];
 	}
 
-	if (topcard1 == 0)
-		bottomcard1 = 1;
-	else if (topcard1 == 1)
-		bottomcard1 = 0;
+	if (topCard1 == 0)
+		bottomCard1 = 1;
+	else if (topCard1 == 1)
+		bottomCard1 = 0;
 
-	if (topcard2 == 0)
-		bottomcard2 = 1;
-	else if (topcard2 == 1)
-		bottomcard2 = 0;
+	if (topCard2 == 0)
+		bottomCard2 = 1;
+	else if (topCard2 == 1)
+		bottomCard2 = 0;
 
-	if (topcard3 == 0)
-		bottomcard3 = 1;
-	else if (topcard3 == 1)
-		bottomcard3 = 0;
+	if (topCard3 == 0)
+		bottomCard3 = 1;
+	else if (topCard3 == 1)
+		bottomCard3 = 0;
 
-	if (topcard4 == 0)
-		bottomcard4 = 1;
-	else if (topcard4 == 1)
-		bottomcard4 = 0;
+	if (topCard4 == 0)
+		bottomCard4 = 1;
+	else if (topCard4 == 1)
+		bottomCard4 = 0;
 
-	if (topcard5 == 0)
-		bottomcard5 = 1;
-	else if (topcard5 == 1)
-		bottomcard5 = 0;
+	if (topCard5 == 0)
+		bottomCard5 = 1;
+	else if (topCard5 == 1)
+		bottomCard5 = 0;
 
-	if (topcard6 == 0)
-		bottomcard6 = 1;
-	else if (topcard6 == 1)
-		bottomcard6 = 0;
+	if (topCard6 == 0)
+		bottomCard6 = 1;
+	else if (topCard6 == 1)
+		bottomCard6 = 0;
 
 	gotoxy(34, 10);
 
@@ -394,9 +383,9 @@ void game()
 	cout << gridTop[0];
 
 	gotoxy(30, 12);
-	cout << topcard1 << setw(8) << topcard2 << setw(8) << topcard3 << setw(8) << topcard4 << setw(8) << topcard5 << setw(8) << topcard6 << endl;
+	cout << topCard1 << setw(8) << topCard2 << setw(8) << topCard3 << setw(8) << topCard4 << setw(8) << topCard5 << setw(8) << topCard6 << endl;
 	gotoxy(30, 13);
-	cout << bottomcard1 << setw(8) << bottomcard2 << setw(8) << bottomcard3 << setw(8) << bottomcard4 << setw(8) << bottomcard5 << setw(8) << bottomcard6 << endl;
+	cout << bottomCard1 << setw(8) << bottomCard2 << setw(8) << bottomCard3 << setw(8) << bottomCard4 << setw(8) << bottomCard5 << setw(8) << bottomCard6 << endl;
 
 	gotoxy(34, 15);
 
@@ -427,36 +416,36 @@ void game()
 
 	for (int i = 0; i < 5; i++)
 	{
-		if (yourcards[i] == "0[AND]")
-			andcard0counter++;
-		else if (yourcards[i] == "1[AND]")
-			andcard1counter++;
-		else if (yourcards[i] == "0[OR]")
-			orcard0counter++;
-		else if (yourcards[i] == "1[OR]")
-			orcard1counter++;
-		else if (yourcards[i] == "0[XOR]")
-			xorcard0counter++;
-		else if (yourcards[i] == "1[XOR]")
-			xorcard1counter++;
-		cout << yourcards[i] << " ";
+		if (yourCards[i] == "0[AND]")
+			andCard0Counter++;
+		else if (yourCards[i] == "1[AND]")
+			andCard1Counter++;
+		else if (yourCards[i] == "0[OR]")
+			orCard0Counter++;
+		else if (yourCards[i] == "1[OR]")
+			orCard1Counter++;
+		else if (yourCards[i] == "0[XOR]")
+			xorCard0Counter++;
+		else if (yourCards[i] == "1[XOR]")
+			xorCard1Counter++;
+		cout << yourCards[i] << " ";
 	}
 
 	cout << endl;
 	cout << endl;
 
 	cout << "----------------" << endl;
-	cout << "|" << "AND-0 Cards: " << andcard0counter << "|" << endl;
+	cout << "|" << "AND-0 Cards: " << andCard0Counter << "|" << endl;
 	cout << "----------------" << endl;
-	cout << "|" << "AND-1 Cards: " << andcard1counter << "|" << endl;
+	cout << "|" << "AND-1 Cards: " << andCard1Counter << "|" << endl;
 	cout << "----------------" << endl;
-	cout << "|" << "OR-0 Cards: " << orcard0counter << " |" << endl;
+	cout << "|" << "OR-0 Cards: " << orCard0Counter << " |" << endl;
 	cout << "----------------" << endl;
-	cout << "|" << "OR-1 Cards: " << orcard1counter << " |" << endl;
+	cout << "|" << "OR-1 Cards: " << orCard1Counter << " |" << endl;
 	cout << "----------------" << endl;
-	cout << "|" << "XOR-0 Cards: " << xorcard0counter << "|" << endl;
+	cout << "|" << "XOR-0 Cards: " << xorCard0Counter << "|" << endl;
 	cout << "----------------" << endl;
-	cout << "|" << "XOR-1 Cards: " << xorcard1counter << "|" << endl;
+	cout << "|" << "XOR-1 Cards: " << xorCard1Counter << "|" << endl;
 	cout << "----------------" << endl;
 }
 
