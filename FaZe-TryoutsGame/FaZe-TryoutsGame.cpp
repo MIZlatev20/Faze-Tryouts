@@ -15,11 +15,11 @@ const int xStartPosition = 50;
 
 int colorSelectionVar;
 
-string gridTop[1] = { "*" };
-string gridJungle[2] = { "*", "*" };
-string gridMid[3] = { "*", "*", "*" };
-string gridBot[4] = { "*", "*", "*" , "*" };
-string gridSupp[5] = { "*", "*", "*" , "*", "*" };
+string lRowGrid[1] = { "*" };
+string foRowGrid[2] = { "*", "*" };
+string tRowGrid[3] = { "*", "*", "*" };
+string sRowGrid[4] = { "*", "*", "*" , "*" };
+string fRowGrid[5] = { "*", "*", "*" , "*", "*" };
 
 int topCard1 = rand() % 2;
 int topCard2 = rand() % 2;
@@ -351,26 +351,26 @@ void game()
 	gotoxy(34, 10);
 
 	for (int i = 0; i < 5; i++)
-		cout << gridSupp[i] << setw(8);
+		cout << fRowGrid[i] << setw(8);
 
 	gotoxy(31, 8);
 
 	for (int i = 0; i < 4; i++)
-		cout << gridBot[i] << setw(8);
+		cout << sRowGrid[i] << setw(8);
 
 	gotoxy(35, 6);
 
 	for (int i = 0; i < 3; i++)
-		cout << gridMid[i] << setw(8);
+		cout << tRowGrid[i] << setw(8);
 
 	gotoxy(39, 4);
 
 	for (int i = 0; i < 2; i++)
-		cout << gridJungle[i] << setw(8);
+		cout << foRowGrid[i] << setw(8);
 
 	gotoxy(43, 2);
 
-	cout << gridTop[0];
+	cout << lRowGrid[0];
 
 	gotoxy(30, 12);
 	cout << topCard1 << setw(8) << topCard2 << setw(8) << topCard3 << setw(8) << topCard4 << setw(8) << topCard5 << setw(8) << topCard6 << endl;
@@ -380,26 +380,26 @@ void game()
 	gotoxy(34, 15);
 
 	for (int i = 0; i < 5; i++)
-		cout << gridSupp[i] << setw(8);
+		cout << fRowGrid[i] << setw(8);
 
 	gotoxy(31, 17);
 
 	for (int i = 0; i < 4; i++)
-		cout << gridBot[i] << setw(8);
+		cout << sRowGrid[i] << setw(8);
 
 	gotoxy(35, 19);
 
 	for (int i = 0; i < 3; i++)
-		cout << gridMid[i] << setw(8);
+		cout << tRowGrid[i] << setw(8);
 
 	gotoxy(39, 21);
 
 	for (int i = 0; i < 2; i++)
-		cout << gridJungle[i] << setw(8);
+		cout << foRowGrid[i] << setw(8);
 
 	gotoxy(43, 23);
 
-	cout << gridTop[0] << endl;
+	cout << lRowGrid[0] << endl;
 
 	cout << "Your cards: " << endl;
 	cout << endl;
