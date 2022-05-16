@@ -229,19 +229,15 @@ void helpMenu()
 
 		colorSelection(GREEN);
 		gotoxy(25, 9);
-		cout << "Rules:" << endl;
+		cout << "Help:" << endl;
 		gotoxy(25, 10);
-		cout << "Rules here" << endl;
+		cout << "The game is not time based so you can take your time choosing what card to play. " << endl;
 		gotoxy(25, 11);
-		cout << "rules here" << endl;
+		cout << "Each card has its own rules so don't worry if you are confused at the start. " << endl;
 		gotoxy(25, 12);
-		cout << "rules here " << endl;
-		gotoxy(25, 13);
-		cout << "rules here!";
-		gotoxy(25, 14);
-		cout << "Escape button: Exit";
+		cout << "You don't have to always play a card you can also discard a card or draw a card." << endl;
 
-		gotoxy(xStartPosition, 15);
+		gotoxy(xStartPosition, 14);
 		colorSelection(displayColor[0]);
 		cout << "Go Back";
 
@@ -277,19 +273,23 @@ void rulesMenu()
 
 		colorSelection(GREEN);
 		gotoxy(25, 9);
-		cout << "rules here" << endl;
+		cout << "Rule 1: The deck of cards must be shuffled." << endl;
 		gotoxy(25, 10);
-		cout << "rules here" << endl;
+		cout << "Rule 2: You must only place the correct card corresponding to its place." << endl;
 		gotoxy(25, 11);
-		cout << "rules here" << endl;
+		cout << "Rule 3: B00le0 puts your Boolean algebra skills to use as you try to" << endl;
 		gotoxy(25, 12);
-		cout << "rules here " << endl;
+		cout << "        resolve your inputs to the correct single digit before your opponent does." << endl;
 		gotoxy(25, 13);
-		cout << "rules here";
+		cout << "Rule 4: Place gates on two inputs, creating a new output, and keep" << endl;
 		gotoxy(25, 14);
-		cout << "Escape button: Exit";
+		cout << "        building until you create the one, final digit that you need to complete the pyramid." << endl;
+		gotoxy(25, 15);
+		cout << "Rule 5: The game starts by placing the Initial Binary cards in a row between the players." << endl;
+		gotoxy(25, 16);
+		cout << "Rule 6: Take turns playing a card or either discarding a card or draw a card." << endl;
 
-		gotoxy(xStartPosition, 15);
+		gotoxy(xStartPosition, 18);
 		colorSelection(displayColor[0]);
 		cout << "Go Back";
 
